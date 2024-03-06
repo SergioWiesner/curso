@@ -21,12 +21,17 @@ Route::get("clase", function(){
     return view("curso");
 });
 
-Route::get("clase/controller/index", "App\Http\Controllers\CursoController@index");
+
+Route::get("clase/controller/index", "App\Http\Controllers\CursoController@index")->name("inicio");
+Route::get("clase/controller/show", "App\Http\Controllers\CursoController@show")->name("show");
+Route::get("clase/controller/edit", "App\Http\Controllers\CursoController@edit")->name("edit");
 Route::post("clase/controller", "App\Http\Controllers\CursoController@store")->name("guardar");
 Route::put("clase/controller/{id}", "App\Http\Controllers\CursoController@update")->name("actualizar");
 Route::delete("clase/controller/{id}", "App\Http\Controllers\CursoController@delete")->name("eliminar");
 
+Route::resource("ejemplo", "App\Http\Controllers\EjemploController")->middleware("auth");
 
 
-Route::get("clase/controller/show", "App\Http\Controllers\CursoController@show");
-Route::get("clase/controller/edit", "App\Http\Controllers\CursoController@edit");
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -58,7 +58,7 @@ class CursoController extends Controller
 
     public function show()
     {
-        return view("curso.show");
+       
     }
     public function edit()
     {

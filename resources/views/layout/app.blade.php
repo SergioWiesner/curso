@@ -9,6 +9,11 @@
     @yield("header")
 </head>
 <body>
+    <ul>
+        <li><a href="{{route('inicio')}}">Página de inicio</a></li>
+        <li><a href="{{route('edit')}}">Página de edit</a></li>
+        <li><a href="{{route('show')}}">Página de show</a></li>
+    </ul>
     <hr>
     @yield("contenido")
 </body>
